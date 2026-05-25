@@ -42,12 +42,10 @@ public class Main {
             return;
         }
 
-        if (deviceYear < 2015) {
-            if (osType == 0) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
-            } else {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке.");
-            }
+        boolean isOldDevice = deviceYear < (currentYear - 9);
+
+        if (isOldDevice) {
+            System.out.println("Установите облегченную версию приложения для " + osName + " по ссылке.");
         } else {
             System.out.println("Установите обычную версию приложения для " + osName + ".");
         }
@@ -63,7 +61,7 @@ public class Main {
             return 3;
         } else {
             // свыше 100 км доставка невозможна
-            return 0; // или можно вернуть -1 или сообщение, что доставка невозможна
+            return 0;
         }
     }
 }
