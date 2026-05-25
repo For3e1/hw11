@@ -11,16 +11,16 @@ public class Main {
         // Задача 2: Проверка версии приложения
         int currentYear = LocalDate.now().getYear();
 
-        checkAppVersion(0, 2014, currentYear);
-        checkAppVersion(1, 2016, currentYear);
-        checkAppVersion(0, 2015, currentYear);
-        checkAppVersion(1, 2010, currentYear);
+        checkAppVersion(0, 2015);
+        checkAppVersion(1, 2022);
+        checkAppVersion(2, 2020);
 
         // Задача 3: Расчет дней доставки карты
         int deliveryDistance = 95;
         int deliveryDays = calculateDeliveryDays(deliveryDistance);
         System.out.println("Потребуется дней: " + deliveryDays);
     }
+
     //Задача 1
     public static void checkLeapYear(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
@@ -29,8 +29,11 @@ public class Main {
             System.out.println(year + " год — невисокосный год");
         }
     }
+
     //Задача 2
-    public static void checkAppVersion(int osType, int deviceYear, int currentYear) {
+    public static void checkAppVersion(int osType, int deviceYear) {
+        int currentYear = LocalDate.now().getYear();
+
         String osName;
 
         if (osType == 0) {
@@ -41,7 +44,6 @@ public class Main {
             System.out.println("Неизвестный тип ОС");
             return;
         }
-
         boolean isOldDevice = deviceYear < (currentYear - 9);
 
         if (isOldDevice) {
@@ -50,6 +52,7 @@ public class Main {
             System.out.println("Установите обычную версию приложения для " + osName + ".");
         }
     }
+
 
     //Задача 3
     public static int calculateDeliveryDays(int distance) {
