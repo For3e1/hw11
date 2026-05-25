@@ -53,7 +53,6 @@ public class Main {
         }
     }
 
-
     //Задача 3
     public static int calculateDeliveryDays(int distance) {
         if (distance <= 20) {
