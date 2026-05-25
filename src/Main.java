@@ -44,7 +44,7 @@ public class Main {
             System.out.println("Неизвестный тип ОС");
             return;
         }
-        boolean isOldDevice = deviceYear < (currentYear - 9);
+        boolean isOldDevice = deviceYear < currentYear;
 
         if (isOldDevice) {
             System.out.println("Установите облегченную версию приложения для " + osName + " по ссылке.");
